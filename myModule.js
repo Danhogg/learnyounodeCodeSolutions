@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { pathToFileURL } = require('url')
+const path = require('path')
 
 module.exports = function(directName, ext, callback) {
     const fileEnding = '.' + ext
