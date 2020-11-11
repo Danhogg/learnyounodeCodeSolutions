@@ -3,15 +3,15 @@ const path = require('path')
 
 module.exports = function(directName, ext, callback) {
     const fileEnding = '.' + ext
-    fs.readdir(directname, function(err, data) {
+    fs.readdir(directName, function(err, data) {
         if (err) {
-            console.log(err)
+            callback(err, null)
         }
         else {
-            fileResults = [] 
+            const fileResults = [] 
             data.forEach(function(item) {
                 if (path.extname(item) === fileEnding) {
-                    fileResults.push(path(item))
+                    fileResults.push(item)
                 }
             })
         callback(null, fileResults)
